@@ -1,30 +1,15 @@
 import java.util.*;
 
 public class MaquinaDeTuring {
-    private Set<String> Estados;
-    private Set<Transicion> Transiciones;
-    private String Estado_Inicial;
-    private String Estado_aceptacion;
-    private String Estado_rechazo;
-    private String Cinta;
-    private String Estado_Actual;
-    private int Simbolo_Actual;
 
-    class Transicion {
-        String Estado_base;
-        char Simbolo_base;
-        String Estado_objetivo;
-        char Simbolo_escribir;
-        boolean Accion;    //true is right, false is left
-
-        boolean isConflicting(String state, char symbol) {
-            if (state.equals(Estado_base) && symbol == Simbolo_base) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
+    public Set<String> Estados;
+    public Set<Transicion> Transiciones;
+    public String Estado_Inicial;
+    public String Estado_aceptacion;
+    public String Estado_rechazo;
+    public String Cinta;
+    public String Estado_Actual;
+    public int Simbolo_Actual;
 
 
     public MaquinaDeTuring() {
@@ -36,10 +21,49 @@ public class MaquinaDeTuring {
         Cinta = new String("");
         Estado_Actual = new String("");
         Simbolo_Actual = 0;
-
     }
 
-    public boolean Correr(String Cadena, boolean silentmode) {
+    public void AgregarEstado(String Estado) {
+        if (!Estados.contains(Estado)) Estados.add(Estado);
+    }
+
+    public void EstadoInicial(String Estado_Inicial) {
+        if (Estados.contains(Estado_Inicial)) this.Estado_Inicial = Estado_Inicial;
+    }
+
+    public void EstadoAceptacion(String Estado_aceptacion) {
+        if (Estados.contains(Estado_aceptacion) && !Estado_rechazo.equals(Estado_aceptacion)) {
+            this.Estado_aceptacion = Estado_aceptacion;
+        }
+    }
+
+    public void EstadoNoAceptado(String Estado_rechazo) {
+        if (Estados.contains(Estado_rechazo) && !Estado_aceptacion.equals(Estado_rechazo)) {
+            this.Estado_rechazo = Estado_rechazo;
+        }
+    }
+
+    static class Transicion {
+        String Estado_base;
+        char Simbolo_base;
+        String Estado_objetivo;
+        char Simbolo_escribir;
+        boolean Accion;
+    }
+
+    public void AgregarTransicion(String Estado_Actual, char Simbolo_Actual, String Estado_Destino, char Simbolo_escribir, boolean Acc) {
+        if (Estados.contains(Estado_Actual) && Estados.contains(Estado_Destino)) {
+            Transicion newTransicion = new Transicion();
+            newTransicion.Estado_base = Estado_Actual;
+            newTransicion.Simbolo_base = Simbolo_Actual;
+            newTransicion.Estado_objetivo = Estado_Destino;
+            newTransicion.Simbolo_escribir = Simbolo_escribir;
+            newTransicion.Accion = Acc;
+            Transiciones.add(newTransicion);
+        }
+    }
+
+    public boolean Correr(String Cadena) {
         Estado_Actual = Estado_Inicial;
         Cinta = Cadena;
 
@@ -47,28 +71,22 @@ public class MaquinaDeTuring {
             boolean Hay_Transicion = false;
             Transicion Transicion_Actual = null;
 
-            if (!silentmode) {
-                if (Simbolo_Actual > 0) {
-                    System.out.println(Cinta.substring(0, Simbolo_Actual) + " " + Estado_Actual + " " + Cinta.substring(Simbolo_Actual));
-                } else {
-                    System.out.println(" " + Estado_Actual + " " + Cinta.substring(Simbolo_Actual));
-                }
-            }
-
-            Iterator<Transicion> TransicionsIterator = Transiciones.iterator();
-
-            while (TransicionsIterator.hasNext() && !Hay_Transicion) {
-                Transicion nextTransicion = TransicionsIterator.next();
-                if (nextTransicion.Estado_base.equals(Estado_Actual) && nextTransicion.Simbolo_base == Cinta.charAt(Simbolo_Actual)) {
-                    Hay_Transicion = true;
-                    Transicion_Actual = nextTransicion;
-                }
-            }
-
-            if (!Hay_Transicion) {
-                System.err.println("No existe una transicion (estado=" + Estado_Actual + ", simbolo=" + Cinta.charAt(Simbolo_Actual) + ")");
-                return false;
+            if (Simbolo_Actual <= 0) {
+                System.out.println(" " + Estado_Actual + " " + Cinta.substring(Simbolo_Actual));
             } else {
+                System.out.println(Cinta.substring(0, Simbolo_Actual) + " " + Estado_Actual + " " + Cinta.substring(Simbolo_Actual));
+            }
+
+            Iterator<Transicion> Conjunto_Transiciones = Transiciones.iterator();
+            while (Conjunto_Transiciones.hasNext() && !Hay_Transicion) {
+                Transicion Opcion_Transicion = Conjunto_Transiciones.next();
+                if (Opcion_Transicion.Estado_base.equals(Estado_Actual) && Opcion_Transicion.Simbolo_base == Cinta.charAt(Simbolo_Actual)) {
+                    Hay_Transicion = true;
+                    Transicion_Actual = Opcion_Transicion;
+                }
+            }
+
+            if (Hay_Transicion) {
                 Estado_Actual = Transicion_Actual.Estado_objetivo;
                 char[] tempCinta = Cinta.toCharArray();
                 tempCinta[Simbolo_Actual] = Transicion_Actual.Simbolo_escribir;
@@ -85,60 +103,13 @@ public class MaquinaDeTuring {
                 while (Cinta.length() <= Simbolo_Actual) {
                     Cinta = Cinta.concat("_");
                 }
+            } else {
+                System.out.println("No existe una transicion (estado=" + Estado_Actual + ", simbolo=" + Cinta.charAt(Simbolo_Actual) + ")");
+                return false;
             }
         }
         return Estado_Actual.equals(Estado_aceptacion);
     }
 
-    public void AgregarEstado(String newState) {
-        if (!Estados.contains(newState)) {
-            Estados.add(newState);
-        }
-    }
 
-    public void EstadoInicial(String newEstado_Inicial) {
-        if (Estados.contains(newEstado_Inicial)) {
-            Estado_Inicial = newEstado_Inicial;
-        }
-    }
-
-    public void EstadoAceptacion(String newEstado_aceptacion) {
-        if (Estados.contains(newEstado_aceptacion) && !Estado_rechazo.equals(newEstado_aceptacion)) {
-            Estado_aceptacion = newEstado_aceptacion;
-        }
-
-    }
-
-    public void EstadoNoAceptado(String newEstado_rechazo) {
-        if (Estados.contains(newEstado_rechazo) && !Estado_aceptacion.equals(newEstado_rechazo)) {
-            Estado_rechazo = newEstado_rechazo;
-        }
-    }
-
-    public void AgregarTransicion(String rState, char rSymbol, String wState, char wSymbol, boolean mDirection) {
-        if (!Estados.contains(rState) || !Estados.contains(wState)) {
-            return;
-        }
-
-        boolean conflict = false;
-        Iterator<Transicion> TransicionsIterator = Transiciones.iterator();
-
-        while (TransicionsIterator.hasNext() && !conflict) {
-            Transicion nextTransicion = TransicionsIterator.next();
-            if (nextTransicion.isConflicting(rState, rSymbol)) {
-                conflict = true;
-            }
-
-        }
-
-        if (!conflict) {
-            Transicion newTransicion = new Transicion();
-            newTransicion.Estado_base = rState;
-            newTransicion.Simbolo_base = rSymbol;
-            newTransicion.Estado_objetivo = wState;
-            newTransicion.Simbolo_escribir = wSymbol;
-            newTransicion.Accion = mDirection;
-            Transiciones.add(newTransicion);
-        }
-    }
 }

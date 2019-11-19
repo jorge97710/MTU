@@ -46,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Mainn">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MTU" />
@@ -63,8 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Mainn" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Mainn" />
       </list>
     </recent_temporary>
   </component>
@@ -78,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573841738488</updated>
-      <workItem from="1573841743515" duration="5562000" />
+      <workItem from="1573841743515" duration="5676000" />
+      <workItem from="1574102801908" duration="13009000" />
     </task>
     <servers />
   </component>
@@ -90,10 +91,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Maquinas.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
