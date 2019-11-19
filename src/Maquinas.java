@@ -110,7 +110,7 @@ public final class Maquinas {
                 switch (MT1Partes[4].length()) {
                     case 1:
                         //                      System.out.println("Movimiento: Stay");
-                        Movimiento = true;
+                        Movimiento = null;
                         break;
                     case 2:
                         //                    System.out.println("Movimiento: Left");
