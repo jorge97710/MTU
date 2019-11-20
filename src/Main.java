@@ -7,9 +7,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {/* The name of the file to open.*/
         MaquinaDeTuring TM1 = Maquinas.MTU1();
-        MaquinaDeTuring TM2 = Maquinas.MTU1();
+        MaquinaDeTuring TM2 = Maquinas.MTU2();
         MaquinaDeTuring TM3 = Maquinas.MTU1();
-        MaquinaDeTuring TM4 = Maquinas.MTU1();
+        MaquinaDeTuring TM4 = Maquinas.MTU4();
 
 
         String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT1.txt";

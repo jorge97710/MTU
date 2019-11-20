@@ -242,7 +242,7 @@ public class MaquinaDeTuring {
                 }
             }
 
-
+            System.out.println(Estado_Actual);
             writer.write("Hello world!\n");
             writer.write("holi");
         } catch (Exception e) {

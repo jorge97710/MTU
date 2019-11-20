@@ -12,6 +12,8 @@ public final class Maquinas {
     }
 
     public static MaquinaDeTuring MTU1() {
+        System.out.println("####################### Maquina 1 #######################");
+
         String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT1.txt";
      String MT1t = null;
 
@@ -88,7 +90,7 @@ public final class Maquinas {
                 //              System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -172,7 +174,7 @@ public final class Maquinas {
                 //    System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -207,7 +209,7 @@ public final class Maquinas {
                 }
 
                 newTM.AgregarTransicion(Estado_leer, Simbolo_leer, Estado_Destino, Simbolo_Escribir, Movimiento);
-                  //System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
+                  System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
 //                System.out.println("--------------Cambio de Transicion--------------\n");
 
             }
@@ -220,6 +222,8 @@ public final class Maquinas {
 
     public static MaquinaDeTuring MTU2()
     {
+        System.out.println("####################### Maquina 2 #######################");
+
         String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT2.txt";
         String MT1t = null;
 
@@ -296,7 +300,7 @@ public final class Maquinas {
                 //              System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -380,7 +384,7 @@ public final class Maquinas {
                 //    System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -415,7 +419,7 @@ public final class Maquinas {
                 }
 
                 newTM.AgregarTransicion(Estado_leer, Simbolo_leer, Estado_Destino, Simbolo_Escribir, Movimiento);
-                //System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
+                System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
 //                System.out.println("--------------Cambio de Transicion--------------\n");
 
             }
@@ -427,6 +431,8 @@ public final class Maquinas {
 
 
     public static MaquinaDeTuring MTU3() {
+        System.out.println("####################### Maquina 3 #######################");
+
         String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT3.txt";
         String MT1t = null;
 
@@ -503,7 +509,7 @@ public final class Maquinas {
                 //              System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -587,7 +593,7 @@ public final class Maquinas {
                 //    System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >=3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -622,7 +628,7 @@ public final class Maquinas {
                 }
 
                 newTM.AgregarTransicion(Estado_leer, Simbolo_leer, Estado_Destino, Simbolo_Escribir, Movimiento);
-                //System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
+                System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
 //                System.out.println("--------------Cambio de Transicion--------------\n");
 
             }
@@ -633,6 +639,8 @@ public final class Maquinas {
     }
 
     public static MaquinaDeTuring MTU4() {
+        System.out.println("####################### Maquina 4 #######################");
+
         String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT4.txt";
         String MT1t = null;
 
@@ -709,7 +717,7 @@ public final class Maquinas {
                 //              System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -793,7 +801,7 @@ public final class Maquinas {
                 //    System.out.println("Simbolo a leer: " + MT1Partes[1].length());
 
                 Simbolo_leer = (char) (MT1Partes[1].length() + '0');
-                if (MT1Partes[2].length() > 3) {
+                if (MT1Partes[2].length() >= 3) {
                     int l = MT1Partes[2].length();
 //                    System.out.println("Estado destino: q" + Integer.toString(l - 2));
                     Estados.add("q" + Integer.toString(l - 2));
@@ -828,7 +836,7 @@ public final class Maquinas {
                 }
 
                 newTM.AgregarTransicion(Estado_leer, Simbolo_leer, Estado_Destino, Simbolo_Escribir, Movimiento);
-                //System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
+                System.out.println(Estado_leer+"|"+ Simbolo_leer+"|"+ Estado_Destino+ "|"+Simbolo_Escribir+"|"+Movimiento);
 //                System.out.println("--------------Cambio de Transicion--------------\n");
 
             }

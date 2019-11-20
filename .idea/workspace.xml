@@ -82,6 +82,8 @@
       <workItem from="1574102801908" duration="13009000" />
       <workItem from="1574183152025" duration="5771000" />
       <workItem from="1574193644493" duration="3796000" />
+      <workItem from="1574209618807" duration="1561000" />
+      <workItem from="1574214659122" duration="849000" />
     </task>
     <servers />
   </component>
@@ -106,7 +108,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Maquinas.java</url>
-          <line>60</line>
+          <line>62</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
