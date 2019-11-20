@@ -12,10 +12,10 @@ public class Main {
         MaquinaDeTuring TM4 = Maquinas.MTU4();
 
 
-        String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT1.txt";
-        String MT2 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT2.txt";
-        String MT3 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT3.txt";
-        String MT4 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT4.txt";
+        String MT1 = "MT1.txt";
+        String MT2 = "MT2.txt";
+        String MT3 = "MT3.txt";
+        String MT4 = "MT4.txt";
 
         String MT1t = null;
         String MT2t = null;

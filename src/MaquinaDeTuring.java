@@ -98,7 +98,7 @@ public class MaquinaDeTuring {
 
 //Tenemos la primera impresion
             System.out.println("\nCinta 1");
-            writer.write("\nCinta 1\n");
+            writer.write("\nCinta 1");
             StringBuilder impc1 = new StringBuilder("_");
             impc1.append("q");
             impc1.append(Ceros(Integer.parseInt(Estado_Inicial.split("q")[1]) + 2)).append("1");
@@ -140,7 +140,7 @@ public class MaquinaDeTuring {
             impc1.append("1");
             System.out.println(impc1);
             writer.write("\n" + impc1 + "\n");
-            writer.write("\nCinta 2\n");
+            writer.write("\nCinta 2");
             System.out.println("\nCinta 2");
             StringBuilder impc2 = new StringBuilder();
             for (int i = 0; i < Cinta.length(); i++) {
@@ -148,11 +148,14 @@ public class MaquinaDeTuring {
             }
             System.out.println("_q" + impc2 + "_");
             writer.write("\n_q" + impc2 + "_\n");
-            writer.write("\nCinta 3\n");
+            writer.write("\nCinta 3");
 
             System.out.println("\nCinta 3");
             System.out.println("_q" + Ceros(Integer.parseInt(Estado_Inicial.split("q")[1]) + 2) + "_\n");
-            writer.write("_q" + Ceros(Integer.parseInt(Estado_Inicial.split("q")[1]) + 2) + "_\n");
+            writer.write("\n_q" + Ceros(Integer.parseInt(Estado_Inicial.split("q")[1]) + 2) + "_\n\n");
+
+            StringBuilder cadenados = new StringBuilder();
+            int val1 = 0;
 
             while (!Estado_Actual.equals(Estado_aceptacion) && !Estado_Actual.equals(Estado_rechazo)) {
                 boolean Hay_Transicion = false;
@@ -185,7 +188,7 @@ public class MaquinaDeTuring {
 
 
                     String valor;
-                    StringBuilder cadenados = new StringBuilder();
+                    cadenados = new StringBuilder();
                     if (Simbolo_Actual <= 0) {
                         valor = " " + Estado_Actual + " " + Cinta.substring(Simbolo_Actual);
                     } else {
@@ -203,9 +206,13 @@ public class MaquinaDeTuring {
                         }
 
                     }
+                    System.out.println("\nCinta 1");
+                    //System.out.println(impc1);
+                    writer.write("\nCinta 1");
+                    writer.write("\n" + impc1 + "\n");
                     System.out.println("\nCinta 2");
-                    writer.write("\nCinta 2\n");
-                    writer.write("_" + cadenados + "_\n");
+                    writer.write("\nCinta 2");
+                    writer.write("\n_" + cadenados + "_\n");
                     System.out.println("_" + cadenados + "_\n");
 
 
@@ -222,9 +229,9 @@ public class MaquinaDeTuring {
                         Cinta = Cinta.concat("_");
                     }
 
-                    writer.write("\nCinta 3\n");
+                    writer.write("\nCinta 3");
                     System.out.println("\nCinta 3\n");
-                    int val1;
+                    
                     if (Estado_Actual.equals("qa")) {
                         val1 = 1;
                     } else if (Estado_Actual.equals("qr")) {
@@ -234,7 +241,7 @@ public class MaquinaDeTuring {
 
                     }
                     System.out.println("_q" + Ceros(val1) + "_\n");
-                    writer.write("\n_q" + Ceros(val1) + "_\n");
+                    writer.write("\n_q" + Ceros(val1) + "_\n\n");
 
                 } else {
                     System.out.println("No existe una transicion (estado=" + Estado_Actual + ", simbolo=" + Cinta.charAt(Simbolo_Actual) + ")");
@@ -243,8 +250,17 @@ public class MaquinaDeTuring {
             }
 
             System.out.println(Estado_Actual);
-            writer.write("Hello world!\n");
-            writer.write("holi");
+
+            writer.write("\nCinta 1");
+            writer.write("\n_" + cadenados + "_\n");
+
+            writer.write("\nCinta 2");
+            writer.write("\n_" + cadenados + "_\n");
+
+            writer.write("\nCinta 3");
+            writer.write("\n_q" + Ceros(val1) + "_");
+
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -14,7 +14,7 @@ public final class Maquinas {
     public static MaquinaDeTuring MTU1() {
         System.out.println("####################### Maquina 1 #######################");
 
-        String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT1.txt";
+        String MT1 = "MT1.txt";
      String MT1t = null;
 
         try {/* FileReader reads text files in the default encoding.*/
@@ -224,7 +224,7 @@ public final class Maquinas {
     {
         System.out.println("####################### Maquina 2 #######################");
 
-        String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT2.txt";
+        String MT1 = "MT2.txt";
         String MT1t = null;
 
         try {/* FileReader reads text files in the default encoding.*/
@@ -433,7 +433,7 @@ public final class Maquinas {
     public static MaquinaDeTuring MTU3() {
         System.out.println("####################### Maquina 3 #######################");
 
-        String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT3.txt";
+        String MT1 = "MT3.txt";
         String MT1t = null;
 
         try {/* FileReader reads text files in the default encoding.*/
@@ -641,7 +641,7 @@ public final class Maquinas {
     public static MaquinaDeTuring MTU4() {
         System.out.println("####################### Maquina 4 #######################");
 
-        String MT1 = "C:\\Users\\jazmi\\OneDrive\\Documentos\\GitHub\\MTU\\src\\MT4.txt";
+        String MT1 = "MT4.txt";
         String MT1t = null;
 
         try {/* FileReader reads text files in the default encoding.*/
